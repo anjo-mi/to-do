@@ -6,14 +6,15 @@ let tasks = 0
 
 let list = document.getElementById('list')
 
-function startTimer(date){
+function startTimer(date, timer){
     setInterval(() =>{
         let time = date - Date.now()
         let days = Math.floor((time / (1000*60*60*24)))
         let hours = Math.floor(time % (1000*60*60*24) / (1000*60*60))
         let minutes = Math.floor(time % (1000*60*60) / (1000*60))
         let seconds = Math.floor(time % (1000*60) / 1000)
-        document.querySelector('.timer').innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`
+        timer.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`
+        
     },1000)
 
 }
@@ -21,7 +22,7 @@ function startTimer(date){
 function addItem(){
     let addedItem = '  ' + document.getElementById('task').value
     let doneBy = +new Date(document.querySelector('input[type = "datetime-local"]').value)
-    if (addedItem !== '  '){
+    if (addedItem.trim()){
         tasks++
         let li = document.createElement('li')
         let input = document.createElement('input')
@@ -38,9 +39,9 @@ function addItem(){
         }
         if(doneBy){
             let timer = document.createElement('span')
-            timer.setAttribute('class', 'timer')
+            timer.setAttribute('class', '.timer')
             li.appendChild(timer)
-            startTimer(doneBy)
+            startTimer(doneBy, timer)
         }
     }
     document.getElementById('task').value = ''
