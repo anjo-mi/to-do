@@ -3,7 +3,7 @@ document.getElementById('add').addEventListener('click', addItem)
 document.getElementById('clear').addEventListener('click', clearDone)
 
 let tasks = 0
-console.log(Date.now())
+
 let list = document.getElementById('list')
 
 function startTimer(date){
@@ -37,10 +37,10 @@ function addItem(){
             document.querySelector('.didIt').style.display = 'block'
         }
         if(doneBy){
-            startTimer(doneBy)
             let timer = document.createElement('span')
             timer.setAttribute('class', 'timer')
             li.appendChild(timer)
+            startTimer(doneBy)
         }
     }
     document.getElementById('task').value = ''
