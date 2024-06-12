@@ -1,5 +1,7 @@
 document.getElementById('add').addEventListener('click', addItem)
 
+document.getElementById('clear').addEventListener('click', clearDone)
+
 let tasks = 0
 
 let list = document.getElementById('list')
@@ -25,4 +27,7 @@ function addItem(){
     document.getElementById('task').value = ''
 }
 
-// decrement tasks foreach qsALL on checkboxes
+function clearDone(){
+    let checked = document.querySelectorAll('input[type = checkbox]')
+    console.log(checked)
+}
