@@ -26,11 +26,23 @@ body{
 .list{
   list-style-type: none;
   padding: 0;
+  width: 90%;
+  border-radius: 50px;
+}
+
+.task{
+  width: 70%;
+}
+
+.list button{
+  width: 10%;
 }
 
 .listItem{
   max-height: 25px;
-  width: 100%;
+  width: 90%;
+  border-radius: 30px;
+  margin: 0 auto;
 }
 
 .didIt button{
