@@ -53,6 +53,7 @@ function addItem(){
         }
     }
     document.getElementById('task').value = ''
+    document.querySelector('input[type = "datetime-local"]').value = 0
 }
 
 function clearDone(){
