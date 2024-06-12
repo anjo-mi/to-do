@@ -7,7 +7,7 @@ let tasks = 0
 let list = document.getElementById('list')
 
 function addItem(){
-    let addedItem = document.getElementById('task').value
+    let addedItem = ' ' + document.getElementById('task').value
     if (addedItem){
         tasks++
         let li = document.createElement('li')
@@ -28,6 +28,16 @@ function addItem(){
 }
 
 function clearDone(){
-    let checked = document.querySelectorAll('input[type = checkbox]')
-    console.log(checked)
+    let checks = document.querySelectorAll('input[type = checkbox]')
+    checks.forEach(item => {
+        if (item.checked === true){
+            item.parentElement.remove()
+            tasks--
+        }
+    if (tasks === 0){
+        document.querySelector('.didIt').style.display = 'none'
+    }
+    })
+    
+    console.log(checks)
 }
