@@ -28,6 +28,18 @@ body{
   padding: 0;
   width: 90%;
   border-radius: 50px;
+  margin: 0 auto;
+}
+
+.listBox{
+  text-align: center;
+}
+
+.listHead{
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 20px;
+  
 }
 
 .task{
@@ -43,6 +55,7 @@ body{
   width: 90%;
   border-radius: 30px;
   margin: 0 auto;
+  text-align: justify;
 }
 
 .didIt button{
