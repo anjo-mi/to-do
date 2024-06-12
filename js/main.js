@@ -6,9 +6,20 @@ let tasks = 0
 
 let list = document.getElementById('list')
 
+function startTimer(date){
+    setInterval(() =>{
+        let time = date - Date.now()
+        let days = Math.floor((time / (1000*60*60*24)))
+        let hours = Math.floor(time % (1000*60*60*24) / (1000*60*60))
+        let minutes = Math.floor(time % (1000*60*60) / (1000*60))
+        let seconds = Math.floor(time % (1000*60) / 1000)
+    },1000)
+
+}
+
 function addItem(){
-    let addedItem = ' ' + document.getElementById('task').value
-    if (addedItem){
+    let addedItem = '  ' + document.getElementById('task').value
+    if (addedItem !== '  '){
         tasks++
         let li = document.createElement('li')
         let input = document.createElement('input')
