@@ -7,14 +7,22 @@ let tasks = 0
 let list = document.getElementById('list')
 
 function startTimer(date, timer){
-    setInterval(() =>{
+    let countdown = setInterval(() =>{
         let time = date - Date.now()
         let days = Math.floor((time / (1000*60*60*24)))
         let hours = Math.floor(time % (1000*60*60*24) / (1000*60*60))
         let minutes = Math.floor(time % (1000*60*60) / (1000*60))
         let seconds = Math.floor(time % (1000*60) / 1000)
         timer.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`
-        
+        if (days > 0){
+            timer.parentElement.style.color = 'black'
+        }else if(0 < hours && hours < 24){
+            timer.parentElement.style.color = 'orange'
+        }else if(0 < minutes && minutes < 60){
+            timer.parentElement.style.color = 'red'
+        }else if(days === 0 && hours === 0 && minutes === 0 && seconds === 0){
+            clearInterval(countdown)
+        }
     },1000)
 
 }
