@@ -35,6 +35,18 @@ body{
   text-align: center;
 }
 
+.chore{
+  margin: 0 auto;
+  max-width: 90%;
+  display: inline-block;
+}
+
+.timer{
+  float: right;
+  right: 10px;
+  display: inline-block;
+}
+
 .listHead{
   margin: 0 auto;
   text-align: center;
