@@ -68,6 +68,8 @@ body{
   border-radius: 30px;
   margin: 0 auto;
   text-align: justify;
+  display: flex;
+  justify-content: space-around;
 }
 
 .didIt{
